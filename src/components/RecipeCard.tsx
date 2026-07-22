@@ -5,9 +5,10 @@ interface Props {
   onClick: () => void
   dimmed?: boolean
   missingTags?: string[]
+  combinationCount?: number
 }
 
-export default function RecipeCard({ recipe, onClick, dimmed, missingTags }: Props) {
+export default function RecipeCard({ recipe, onClick, dimmed, missingTags, combinationCount }: Props) {
   return (
     <button
       onClick={onClick}
@@ -58,6 +59,14 @@ export default function RecipeCard({ recipe, onClick, dimmed, missingTags }: Pro
               {label}
             </span>
           ))}
+        </div>
+      )}
+
+      {combinationCount && combinationCount > 1 && (
+        <div className="mt-1.5">
+          <span className="text-[10px] px-1 rounded bg-amber-900/50 text-amber-300">
+            {combinationCount}种方案
+          </span>
         </div>
       )}
     </button>

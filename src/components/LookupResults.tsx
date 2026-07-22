@@ -51,6 +51,7 @@ export default function LookupResults({ results, tags, onSelectRecipe }: Props) 
                 key={r.recipe.id}
                 recipe={r.recipe}
                 onClick={() => onSelectRecipe(r.recipe)}
+                combinationCount={r.combinationCount}
               />
             ))}
           </div>
